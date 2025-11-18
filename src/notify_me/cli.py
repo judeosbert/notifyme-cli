@@ -81,9 +81,8 @@ def run_command_with_notification(command: List[str], message: Optional[str] = N
 
     try:
         # Run the command - if it's a single string with shell operators, use shell=True
-        use_shell = (len(command) == 1 and 
-                    any(op in command[0] for op in ['&&', '||', '|', ';', '>', '<', '$(', '`']))
-        
+        use_shell = len(command) == 1 and any(op in command[0] for op in ["&&", "||", "|", ";", ">", "<", "$(", "`"])
+
         if use_shell:
             result = subprocess.run(command[0], shell=True, capture_output=False)
         else:
