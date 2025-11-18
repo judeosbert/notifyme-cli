@@ -19,7 +19,7 @@ except FileNotFoundError:
 
 setup(
     name="notifyme-cli",
-    version="1.0.0",
+    version="1.0.1",
     author="Jude Osby",
     description="A command-line tool to send Telegram notifications when long-running commands complete",
     long_description=long_description,

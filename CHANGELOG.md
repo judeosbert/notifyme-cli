@@ -14,6 +14,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Issue and pull request templates
 - Security policy
 
+## [1.0.1] - 2025-11-18
+
+### Fixed
+- Shell command execution with operators (`&&`, `||`, `|`, etc.) in `--exec` mode
+- Commands with shell operators now properly execute using shell=True
+- Improved error handling for command not found scenarios
+
+### Technical Details
+- Enhanced `run_command_with_notification` to detect shell operators
+- Automatic shell execution for commands containing `&&`, `||`, `|`, `;`, `>`, `<`, `$(`, backticks
+- Maintains backward compatibility for simple commands without shell operators
+
 ## [1.0.0] - 2024-11-18
 
 ### Added

@@ -147,7 +147,7 @@ Examples:
         """,
     )
 
-    parser.add_argument("--version", action="version", version="notifyme-cli 1.0.0")
+    parser.add_argument("--version", action="version", version="notifyme-cli 1.0.1")
 
     # Main execution arguments
     parser.add_argument("-m", "--message", type=str, help='Custom message to send (default: "Task complete")')
