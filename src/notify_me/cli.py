@@ -80,14 +80,20 @@ def run_command_with_notification(command: List[str], message: Optional[str] = N
     start_time = time.time()
 
     try:
-        # Run the command
-        result = subprocess.run(command, capture_output=False)
+        # Run the command - if it's a single string with shell operators, use shell=True
+        use_shell = (len(command) == 1 and 
+                    any(op in command[0] for op in ['&&', '||', '|', ';', '>', '<', '$(', '`']))
+        
+        if use_shell:
+            result = subprocess.run(command[0], shell=True, capture_output=False)
+        else:
+            result = subprocess.run(command, capture_output=False)
         exit_code = result.returncode
     except KeyboardInterrupt:
         print("\n⚠️ Command interrupted by user")
         exit_code = 130  # Standard exit code for Ctrl+C
     except FileNotFoundError:
-        print(f"❌ Command not found: {command[0]}")
+        print(f"❌ Command not found: {command_str}")
         exit_code = 127
     except Exception as e:
         print(f"❌ Error executing command: {e}")
