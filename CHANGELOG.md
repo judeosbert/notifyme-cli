@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-11-18
 
 ### Added
-- Initial release of notify-me
+- Initial release of notifyme-cli
 - Telegram bot integration for notifications
 - Command-line interface with argparse
 - Configuration management with JSON storage
@@ -33,12 +33,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Complete README with setup and usage instructions
 
 ### Features
-- **Simple Usage**: `command && notify-me` sends "Task complete"
-- **Custom Messages**: `command && notify-me -m "Custom message"`
+- **Simple Usage**: `command && notifyme` sends "Task complete"
+- **Custom Messages**: `command && notifyme -m "Custom message"`
 - **Configuration**: Secure local storage in ~/.notify-me/config.json
-- **Setup**: Interactive `notify-me setup` for easy configuration
-- **Testing**: `notify-me test` to verify bot connection
-- **Execution Wrapper**: `notify-me --exec command` for timing and exit codes
+- **Setup**: Interactive `notifyme setup` for easy configuration
+- **Testing**: `notifyme test` to verify bot connection
+- **Execution Wrapper**: `notifyme --exec command` for timing and exit codes
 - **Cross-platform**: Works on macOS, Linux, and Windows
 - **Multiple Python versions**: Supports Python 3.7+
 
@@ -51,5 +51,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Exit code tracking and reporting
 - Comprehensive test coverage
 
-[Unreleased]: https://github.com/yourusername/notify-me/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/yourusername/notify-me/releases/tag/v1.0.0
+### Development Notes
+- Project created with AI assistance (GitHub Copilot)
+- Demonstrates modern Python packaging and open-source practices
+- Includes comprehensive GitHub workflows and community templates
+
+[Unreleased]: https://github.com/judeosbert/notifyme-cli/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/judeosbert/notifyme-cli/releases/tag/v1.0.0

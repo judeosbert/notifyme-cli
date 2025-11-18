@@ -1,10 +1,10 @@
-# notify-me
+# notifyme-cli
 
-[![CI](https://github.com/yourusername/notify-me/workflows/CI/badge.svg)](https://github.com/yourusername/notify-me/actions)
-[![PyPI version](https://badge.fury.io/py/notify-me.svg)](https://badge.fury.io/py/notify-me)
-[![Python versions](https://img.shields.io/pypi/pyversions/notify-me.svg)](https://pypi.org/project/notify-me/)
+[![CI](https://github.com/judeosbert/notifyme-cli/workflows/CI/badge.svg)](https://github.com/judeosbert/notifyme-cli/actions)
+[![PyPI version](https://badge.fury.io/py/notifyme-cli.svg)](https://badge.fury.io/py/notifyme-cli)
+[![Python versions](https://img.shields.io/pypi/pyversions/notifyme-cli.svg)](https://pypi.org/project/notifyme-cli/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![codecov](https://codecov.io/gh/yourusername/notify-me/branch/main/graph/badge.svg)](https://codecov.io/gh/yourusername/notify-me)
+[![codecov](https://codecov.io/gh/judeosbert/notifyme-cli/branch/main/graph/badge.svg)](https://codecov.io/gh/judeosbert/notifyme-cli)
 
 A command-line tool that sends Telegram notifications when long-running commands complete. Never miss when your builds, tests, or data processing jobs finish!
 
@@ -21,20 +21,20 @@ A command-line tool that sends Telegram notifications when long-running commands
 
 ### From PyPI (Recommended)
 ```bash
-pip install notify-me
+pip install notifyme-cli
 ```
 
 ### From Source
 ```bash
-git clone https://github.com/yourusername/notify-me.git
-cd notify-me
+git clone https://github.com/judeosbert/notifyme-cli.git
+cd notifyme-cli
 pip install -e .
 ```
 
 ### Development Installation
 ```bash
-git clone https://github.com/yourusername/notify-me.git
-cd notify-me
+git clone https://github.com/judeosbert/notifyme-cli.git
+cd notifyme-cli
 pip install -e ".[dev]"
 ```
 
@@ -57,71 +57,71 @@ pip install -e ".[dev]"
 Run the setup command and enter your bot token and chat ID:
 
 ```bash
-notify-me setup
+notifyme setup
 ```
 
 The setup will test the connection and confirm everything works.
 
-## Usage
+## 📱 Usage
 
 ### Basic Usage (Recommended)
 
 Run commands and then notify when complete:
 ```bash
 # Send default "Task complete" message
-python train_model.py && notify-me
+python train_model.py && notifyme
 
 # Send custom message
-make build && notify-me -m "Build finished"
+make build && notifyme -m "Build finished"
 
 # Chain multiple commands
-npm test && npm build && notify-me -m "CI pipeline complete"
+npm test && npm build && notifyme -m "CI pipeline complete"
 ```
 
 ### Direct Message Sending
 
 Send a message directly:
 ```bash
-notify-me                                    # Send "Task complete"
-notify-me -m "Hello from the command line!"  # Send custom message
+notifyme                                    # Send "Task complete"
+notifyme -m "Hello from the command line!"  # Send custom message
 ```
 
 ### Command Wrapper (Alternative)
 
 Execute commands with notification wrapper:
 ```bash
-notify-me --exec python train_model.py
-notify-me --exec -m "Training complete!" python train_model.py
+notifyme --exec python train_model.py
+notifyme --exec -m "Training complete!" python train_model.py
 ```
 
 ### Test Configuration
 
 Test your setup:
 ```bash
-notify-me test
+notifyme test
 ```
 
 ## Command Examples
 
 ```bash
 # Long-running build with notification (recommended)
-docker build -t myapp . && notify-me -m "Docker build complete"
+docker build -t myapp . && notifyme -m "Docker build complete"
 
 # Database backup with notification
-pg_dump mydatabase > backup.sql && notify-me -m "Backup finished"
+pg_dump mydatabase > backup.sql && notifyme -m "Backup finished"
 
 # Machine learning training
-python train.py --epochs 100 && notify-me -m "Model training done"
+python train.py --epochs 100 && notifyme -m "Model training done"
 
 # Run tests and get notified
-pytest tests/ && notify-me
+pytest tests/ && notifyme
 
 # Complex pipeline
-bash ./process_data.sh && notify-me -m "Data processing complete"
+bash ./process_data.sh && notifyme -m "Data processing complete"
 
 # Using the wrapper (alternative method)
-notify-me --exec pytest tests/
-notify-me --exec -m "Training complete!" python train.py
+notifyme --exec pytest tests/
+notifyme --exec -m "Training complete!" python train.py
 ```
 
 ## Configuration
@@ -165,7 +165,7 @@ Time: 2024-11-17 14:30:22
 ## Troubleshooting
 
 ### "Bot not configured" Error
-Run `notify-me setup` to configure your bot token and chat ID.
+Run `notifyme setup` to configure your bot token and chat ID.
 
 ### "Connection error" or timeout
 - Check your internet connection
@@ -228,14 +228,24 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you find this project helpful, please consider:
 - Giving it a star on GitHub ⭐
-- Reporting bugs or requesting features through [issues](https://github.com/yourusername/notify-me/issues)
+- Reporting bugs or requesting features through [issues](https://github.com/judeosbert/notifyme-cli/issues)
 - Contributing to the codebase
 - Sharing it with others who might find it useful
 
+## 🤖 **Built with AI**
+
+This project was created with the assistance of AI (GitHub Copilot) to demonstrate modern Python development practices and open-source project structure. The AI helped with:
+
+- Code architecture and implementation
+- Comprehensive documentation and examples  
+- GitHub workflows and community templates
+- Testing and quality assurance setup
+- Open-source best practices
+
 ## 🔗 Links
 
-- [PyPI Package](https://pypi.org/project/notify-me/)
-- [GitHub Repository](https://github.com/yourusername/notify-me)
-- [Documentation](https://github.com/yourusername/notify-me#readme)
-- [Issue Tracker](https://github.com/yourusername/notify-me/issues)
-- [Discussions](https://github.com/yourusername/notify-me/discussions)
+- [PyPI Package](https://pypi.org/project/notifyme-cli/)
+- [GitHub Repository](https://github.com/judeosbert/notifyme-cli)
+- [Documentation](https://github.com/judeosbert/notifyme-cli#readme)
+- [Issue Tracker](https://github.com/judeosbert/notifyme-cli/issues)
+- [Discussions](https://github.com/judeosbert/notifyme-cli/discussions)

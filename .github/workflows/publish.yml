@@ -6,7 +6,13 @@ on:
 
 jobs:
   deploy:
+    # SECURITY: Only allow publishing from the original repository
+    # This prevents forks from accidentally publishing to PyPI
+    if: github.repository == 'judeosbert/notifyme-cli' && github.event_name == 'release'
     runs-on: ubuntu-latest
+    environment: 
+      name: pypi
+      url: https://pypi.org/project/notifyme-cli/
     
     steps:
     - uses: actions/checkout@v4
@@ -24,8 +30,19 @@ jobs:
     - name: Build package
       run: python -m build
       
+    - name: Verify repository ownership
+      run: |
+        echo "Repository: ${{ github.repository }}"
+        echo "Repository owner: ${{ github.repository_owner }}"
+        if [[ "${{ github.repository }}" != "judeosbert/notifyme-cli" ]]; then
+          echo "❌ Publishing not allowed from forks"
+          exit 1
+        fi
+        echo "✅ Repository verified for publishing"
+        
     - name: Publish package to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
+        verbose: true

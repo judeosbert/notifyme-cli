@@ -12,7 +12,7 @@ from .notifier import NotifyMe
 
 def setup_bot():
     """Interactive setup for Telegram bot configuration."""
-    print("🔧 Setting up notify-me with Telegram bot")
+    print("🔧 Setting up notifyme with Telegram bot")
     print("=" * 50)
     
     config = Config()
@@ -70,7 +70,7 @@ def run_command_with_notification(command: List[str], message: Optional[str] = N
     notifier = NotifyMe(config)
     
     if not config.is_configured():
-        print("❌ Bot not configured. Run 'notify-me setup' first.")
+        print("❌ Bot not configured. Run 'notifyme setup' first.")
         return 1
     
     command_str = " ".join(command)
@@ -119,7 +119,7 @@ def send_simple_message(message: str) -> bool:
     notifier = NotifyMe(config)
     
     if not config.is_configured():
-        print("❌ Bot not configured. Run 'notify-me setup' first.")
+        print("❌ Bot not configured. Run 'notifyme setup' first.")
         return False
     
     return notifier.send_notification(message)
@@ -132,20 +132,20 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  notify-me setup                          # Set up Telegram bot
-  notify-me                                # Send default "Task complete" message
-  notify-me -m "Build finished"            # Send custom message
-  python train.py && notify-me             # Run command then notify
-  make build && notify-me -m "Build done"  # Run command then notify with message
-  notify-me test                          # Test the current configuration
-  notify-me --exec python train.py        # Run command with notification wrapper
+  notifyme setup                          # Set up Telegram bot
+  notifyme                                # Send default "Task complete" message
+  notifyme -m "Build finished"            # Send custom message
+  python train.py && notifyme             # Run command then notify
+  make build && notifyme -m "Build done"  # Run command then notify with message
+  notifyme test                          # Test the current configuration
+  notifyme --exec python train.py        # Run command with notification wrapper
         """
     )
     
     parser.add_argument(
         '--version', 
         action='version', 
-        version='notify-me 1.0.0'
+        version='notifyme-cli 1.0.0'
     )
     
     # Main execution arguments
@@ -177,7 +177,7 @@ Examples:
         elif args.cmd[0] == 'test':
             config = Config()
             if not config.is_configured():
-                print("❌ Bot not configured. Run 'notify-me setup' first.")
+                print("❌ Bot not configured. Run 'notifyme setup' first.")
                 sys.exit(1)
             
             notifier = NotifyMe(config)

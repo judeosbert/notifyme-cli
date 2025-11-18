@@ -1,6 +1,6 @@
 # Contributing to notify-me
 
-Thank you for your interest in contributing to notify-me! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to notifyme-cli! This document provides guidelines and information for contributors.
 
 ## Code of Conduct
 
@@ -36,8 +36,8 @@ Feature suggestions are welcome! Please:
 
 1. **Fork and clone** the repository:
    ```bash
-   git clone https://github.com/yourusername/notify-me.git
-   cd notify-me
+   git clone https://github.com/judeosbert/notifyme-cli.git
+   cd notifyme-cli
    ```
 
 2. **Create a virtual environment**:
@@ -163,7 +163,7 @@ make clean         # Clean build artifacts
 ## Project Structure
 
 ```
-notify-me/
+notifyme-cli/
 ├── src/notify_me/          # Main package source
 │   ├── cli.py             # Command-line interface
 │   ├── config.py          # Configuration management  
@@ -200,4 +200,8 @@ Contributors will be recognized in:
 - GitHub contributors page
 - Release notes for significant contributions
 
-Thank you for contributing to notify-me! 🎉
+## About This Project
+
+This project was initially created with AI assistance (GitHub Copilot) as a demonstration of modern Python development practices. We welcome human contributors to help improve and expand the functionality!
+
+Thank you for contributing to notifyme-cli! 🎉
