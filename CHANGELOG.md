@@ -40,7 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Testing**: `notifyme test` to verify bot connection
 - **Execution Wrapper**: `notifyme --exec command` for timing and exit codes
 - **Cross-platform**: Works on macOS, Linux, and Windows
-- **Multiple Python versions**: Supports Python 3.7+
+- **Multiple Python versions**: Supports Python 3.8+
 
 ### Technical Details
 - Configuration read fresh from disk on every notification

@@ -57,7 +57,7 @@ notify-me/
 ## ✨ GitHub Features Implemented
 
 ### 🔄 **CI/CD Workflows**
-- **Continuous Integration**: Tests on Python 3.7-3.12, multiple OS
+- **Continuous Integration**: Tests on Python 3.8-3.12, multiple OS
 - **Code Quality**: Linting (flake8), formatting (black), type checking (mypy)
 - **Coverage**: Automated test coverage reporting with Codecov
 - **Publishing**: Automatic PyPI publishing on GitHub releases
@@ -136,7 +136,7 @@ The repository is **production-ready** for open-source publication! 🎉
 
 ## 📊 Project Stats
 
-- **Languages**: Python 3.7+ support
+- **Languages**: Python 3.8+ support
 - **License**: MIT (open-source friendly)
 - **Dependencies**: Minimal (requests, click, colorama)
 - **Test Coverage**: Unit tests included
